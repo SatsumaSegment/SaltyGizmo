@@ -1,0 +1,147 @@
+ScreenManager:
+    MainScreen:
+    NoteScreen:
+
+<MainScreen>:
+    name: "main"
+    id: main_s
+    MDScreen:
+        md_bg_color: [1,1,1,1]
+        MDToolbar:
+            color: "LightBlue"
+            pos_hint: {"center_x": 0.5, "center_y": 0.948}
+            right_action_items: [["assets/40AddNote.png", lambda x: root.note_screen(), "Notes"], [''], ["assets/40LoadSaltPSP.png", lambda x: root.get_salt(), "Load Salt"], [''], ["assets/40Cancel-long.png", lambda x: root.flip(), "Clear"], ]
+
+        Image:
+            source: 'assets/text_title.png'
+            pos_hint: {"center_x": 0.178, "center_y": 0.948}
+            size_hint: (0.32, 0.32)
+
+        Image:
+            source: 'assets/512GizmoAlfa-withSalt.png'
+            pos_hint: {"center_x": 0.9, "center_y": 0.126}
+            size_hint: (0.25, 0.25)
+
+
+        MDTextField:
+            id: salt
+            hint_text: "Salt"
+            halign: "center"
+            size_hint: (0.65, 0.11)
+            pos_hint: {"center_x": 0.62, "center_y": 0.8}
+            font_size: 24
+
+        MDTextField:
+            id: password
+            hint_text: "Password"
+            helper_text: "Enter password to encrypt"
+            halign: "center"
+            size_hint: (0.65, 0.11)
+            pos_hint: {"center_x": 0.62, "center_y": 0.6452}
+            font_size: 24
+
+        MDTextField:
+            id: enc_password
+            hint_text: "Encrypted password"
+            halign: "center"
+            mode: "rectangle"
+            multiline: True
+            size_hint: (0.8, 0.15)
+            pos_hint: {"center_x": 0.5, "center_y": 0.35}
+            font_size: 24
+
+        Image:
+            source: 'assets/text_pass.png'
+            size_hint: (0.2, 0.2)
+            pos_hint: {"center_x": 0.15, "center_y": 0.65}
+            opacity: 0.5
+
+        MDLabel:
+            text: "Salty Gizmo"
+            halign: "left"
+            pos_hint: {"center_x": 0.55, "center_y": 0.12}
+            font_size: 16
+            theme_text_color: "Secondary"
+
+        MDLabel:
+            text: "- The password creation software"
+            halign: "center"
+            pos_hint: {"center_x": 0.28, "center_y": 0.12}
+            font_size: 12
+            theme_text_color: "Secondary"
+
+        MDLabel:
+            text: "Designed by sharpcrumb"
+            halign: "left"
+            pos_hint: {"center_x": 0.55, "center_y": 0.075}
+            font_size: 11
+            theme_text_color: "Secondary"
+
+        MDLabel:
+            text: "Coded by SatsumaSegment"
+            halign: "left"
+            pos_hint: {"center_x": 0.55, "center_y": 0.05}
+            font_size: 11
+            theme_text_color: "Secondary"
+
+        MDLabel:
+            text: "Salt:"
+            font_size: 24
+            pos_hint: {"center_x": 0.25, "center_y": 0.8}
+            size_hint: (0.24, 0.1)
+            font_name: 'assets/Barce.otf'
+
+        Button:
+            text: ""
+            font_size: 24
+            pos_hint: {"center_x": 0.5, "center_y": 0.51}
+            size_hint: (0.26, 0.15)
+            background_normal: 'assets/Encrypt-ButtonUp-buttonized.png'
+            background_down: 'assets/Encrypt-ButtonDown-buttonized.png'
+            on_press: root.encrypt()
+
+        Button:
+            text: ""
+            font_size: 24
+            pos_hint: {"center_x": 0.81, "center_y": 0.489}
+            size_hint: (0.22, 0.1)
+            background_normal: 'assets/50ExtractSalt-ButtonUp-buttonized.png'
+            background_down: 'assets/50ExtractSalt-ButtonDown-buttonized.png'
+            on_press: root.remove()
+
+
+<NoteScreen>:
+    name: "note"
+    id: note_s
+    MDScreen:
+        md_bg_color: [1,1,1,1]
+
+        MDToolbar:
+            color: "LightBlue"
+            pos_hint: {"center_x": 0.5, "center_y": 0.948}
+            right_action_items: [["assets/40SaveNote.png", lambda x: root.save_notes(), "Save notes"], [''], ["assets/40LoadNote.png", lambda x: root.get_notes(), "Load notes"], ['']]
+            left_action_items: [["assets/40Back.png", lambda x: root.main_screen(), "Back"]]
+
+        Image:
+            source: 'assets/text_notes.png'
+            pos_hint: {"center_x": 0.16, "center_y": 0.948}
+            size_hint: (0.15, 0.15)
+
+
+        Image:
+            source: 'assets/558GizmoAlfa-withSaltmirrorInquisitive.png'
+            pos_hint: {"center_x": 0.728, "center_y": 0.3}
+            size_hint: (0.5, 0.5)
+            opacity: 0.4
+
+        MDTextField:
+            id: notes
+            hint_text: "Notes"
+            halign: "center"
+            mode: "rectangle"
+            multiline: True
+            size_hint: (0.8, 0.8)
+            pos_hint: {"center_x": 0.5, "center_y": 0.45}
+            font_name: 'assets/DogType.ttf'
+            font_size: 24
+
