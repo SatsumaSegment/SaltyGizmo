@@ -11,8 +11,11 @@ How to use:
 - You can use the notes page to write your unencrypted passwords, for example, and load them later.
 
 'Extract salt' will remove the key from the password (recommended).
+
 Salts and notes are stored locally in JSON files, therefore, I recommend this program for personal use only. It's best used via a personal USB memory stick.
 
-Created by
+Created by:
+
 Greg Duke - SatsumaSegment
+
 Veronika Duke - sharpcrumb
