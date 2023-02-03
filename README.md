@@ -1,6 +1,7 @@
 # SaltyGizmo
 A password creation software
 
+![salty](https://user-images.githubusercontent.com/105805424/216618720-5b4c5588-523b-49be-b8ce-7ff9bf2ea853.png)
 
 How to use:
 
